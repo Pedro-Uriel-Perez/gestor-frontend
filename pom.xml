@@ -17,6 +17,10 @@
 		<java.version>21</java.version>
 		<playwright.version>1.63.0</playwright.version>
 		<jacoco.version>0.8.12</jacoco.version>
+		<sonar.projectKey>gestor-frontend</sonar.projectKey>
+		<sonar.projectName>gestor-frontend</sonar.projectName>
+		<!-- Librerías de terceros incluidas en static/ (Bootstrap, jQuery, Popper) no se analizan -->
+		<sonar.exclusions>**/static/js/bootstrap*,**/static/js/jquery*,**/static/js/popper*,**/static/css/bootstrap*</sonar.exclusions>
 	</properties>
 	<dependencies>
 		<dependency>
