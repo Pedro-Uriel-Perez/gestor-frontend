@@ -9,6 +9,12 @@ pipeline {
         maven 'maven-3.9'     // Manage Jenkins > Tools > Maven
     }
 
+    environment {
+        // Caché de Trivy propia de cada job: si dos pipelines actualizan la misma base de
+        // vulnerabilidades al mismo tiempo, Trivy falla con SIGSEGV (incidencia INC-09)
+        TRIVY_CACHE_DIR = "/var/jenkins_home/trivy-cache/${env.JOB_NAME}"
+    }
+
     options {
         timestamps()
     }
